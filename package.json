@@ -1,6 +1,6 @@
 {
   "name": "library-custom-hooks-input",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "library-custom-hooks-input",
   "main": "./dist/bundle.js",
@@ -9,7 +9,8 @@
   "license": "MIT",
   "scripts": {
     "build": "rollup -c",
-    "watch": "rollup -cw"
+    "watch": "rollup -cw",
+    "prepare": "rm -rf dist && tsc"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
