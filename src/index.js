@@ -1,1 +1,1 @@
-// entry
+export * from "./Hello.jsx";
