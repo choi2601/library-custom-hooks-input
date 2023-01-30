@@ -1,5 +1,5 @@
 export default {
-  input: "./scr/index.js",
+  input: "./src/index.js",
   output: {
     file: "./dist/bundle.js",
     format: "es",
