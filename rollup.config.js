@@ -1,14 +1,28 @@
+import resolve from "rollup-plugin-node-resolve";
 import babel from "@rollup/plugin-babel";
 import typescript from "@rollup/plugin-typescript";
+import peerDepsExternal from "rollup-plugin-peer-deps-external";
+import pkg from "./package.json";
+
+const extensions = [".js", ".jsx", ".ts", ".tsx"];
+
+process.env.BABEL_ENV = "production";
 
 export default {
   input: "./src/index.ts",
-  output: {
-    file: "./dist/bundle.js",
-    format: "es",
-    sourcemap: true,
-  },
+  output: [
+    {
+      file: pkg.main,
+      format: "cjs",
+    },
+    {
+      file: pkg.module,
+      format: "esm",
+    },
+  ],
   plugins: [
+    peerDepsExternal(),
+    resolve({ extensions }),
     babel({
       babelHelpers: "bundled",
       presets: [
@@ -16,7 +30,7 @@ export default {
         "@babel/preset-react",
         "@babel/preset-typescript",
       ],
-      extensions: [".js", ".jsx", ".ts", ".tsx"],
+      extensions,
     }),
     typescript(),
   ],
