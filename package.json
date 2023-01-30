@@ -1,0 +1,9 @@
+{
+  "name": "library-custom-hooks-input",
+  "version": "1.0.0",
+  "description": "library-custom-hooks-input",
+  "main": "index.js",
+  "repository": "https://github.com/choi2601/library-custom-hooks-input.git",
+  "author": "choi2601 <byeonghyeonchoe55@gmail.com>",
+  "license": "MIT"
+}
