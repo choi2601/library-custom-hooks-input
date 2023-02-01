@@ -2,6 +2,7 @@ import resolve from "rollup-plugin-node-resolve";
 import babel from "@rollup/plugin-babel";
 import typescript from "@rollup/plugin-typescript";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
+import postcss from "rollup-plugin-postcss";
 import pkg from "./package.json";
 
 const extensions = [".js", ".jsx", ".ts", ".tsx"];
@@ -33,5 +34,10 @@ export default {
       extensions,
     }),
     typescript(),
+    postcss({
+      extract: false,
+      modules: true,
+      use: ["sass"],
+    }),
   ],
 };
